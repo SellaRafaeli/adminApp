@@ -6,8 +6,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/ping', function (req, res, next) {
-  var val = 123;
-  Users.findOne({}).then((res) => console.log(res) );
+  var val = 123;  
   res.send({ pong: true, val: val, foo: 'bar1', mongo: 'mongo', users: 123});
 });
 
