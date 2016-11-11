@@ -2,9 +2,9 @@
   "name": "adminApp",
   "version": "1.0.0",
   "scripts": {    
-    "start": "tsc && concurrently \"tsc -w\" \"nodemon --inspect ./server/bin/www\" ", 
+    "start": "tsc && concurrently \"tsc -w\" \"nodemon --inspect ./server/server.js\" ", 
     "justApp": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
-    "justServer": "nodemon ./server/bin/www",
+    "run": "nodemon ./server/server.js",
     "lite": "lite-server",
     "tsc": "tsc",
     "tsc:w": "tsc -w"
@@ -40,7 +40,8 @@
     "express-session": "^1.11.3",
     "reflect-metadata": "0.1.2",
     "serve-favicon": "^2.3.0",
-    "systemjs": "0.19.27"
+    "systemjs": "0.19.27",
+    "mongodb": "~2.0"
   },
   "devDependencies": {
     "@types/core-js": "^0.9.34",
