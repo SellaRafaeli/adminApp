@@ -19,6 +19,13 @@ var HeroesComponent = (function () {
     HeroesComponent.prototype.getHeroes = function () {
         var _this = this;
         this.heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
+        console.log('getting heroes');
+        var hrc = this;
+        window.bla = hrc;
+        this.heroService.getHeroes().then(function (heroes) {
+            console.log(heroes);
+            return (hrc.heroes = heroes);
+        });
     };
     HeroesComponent.prototype.ngOnInit = function () {
         this.getHeroes();
