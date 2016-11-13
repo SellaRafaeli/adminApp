@@ -23,7 +23,7 @@ var DashboardComponent = (function () {
             .then(function (heroes) { return _this.heroes = heroes.slice(0, 5); });
     };
     DashboardComponent.prototype.gotoDetail = function (hero) {
-        var link = ['/detail', hero.id];
+        var link = ['/users', hero._id];
         this.router.navigate(link);
     };
     DashboardComponent = __decorate([

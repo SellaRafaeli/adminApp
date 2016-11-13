@@ -16,8 +16,8 @@ var HeroSearchService = (function () {
     }
     HeroSearchService.prototype.search = function (term) {
         return this.http
-            .get("app/heroes/?name=" + term)
-            .map(function (r) { return r.json().data; });
+            .get("/api/users/search/?name=" + term)
+            .map(function (r) { return r.json(); });
     };
     HeroSearchService = __decorate([
         core_1.Injectable(), 
