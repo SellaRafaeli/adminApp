@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { Hero } from './hero';
-import { HeroesComponent } from './heroes.component';
-import { HeroDetailComponent } from './hero-detail.component';
-import { HeroService } from './hero.service';
+import { Hero } from './users/hero';
+import { HeroesComponent } from './users/heroes.component';
+import { HeroDetailComponent } from './users/hero-detail.component';
+import { HeroService } from './users/hero.service';
 
 @Component({
   moduleId: module.id,

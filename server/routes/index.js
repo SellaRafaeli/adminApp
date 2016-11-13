@@ -5,7 +5,7 @@ var clientSideRoutes = ['/','/dashboard','/users','/heroes']
 
 
 router.get(clientSideRoutes, (req, res, next) => {
-  res.sendFile('index.html');
+  res.sendfile('./index.html');
 });
 
 router.get(['/ping', '/ping2'], function (req, res, next) {

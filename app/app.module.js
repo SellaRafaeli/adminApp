@@ -17,12 +17,12 @@ var app_routing_module_1 = require('./app-routing.module');
 // import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 // import { InMemoryDataService }  from './in-memory-data.service';
 var app_component_1 = require('./app.component');
-var dashboard_component_1 = require('./dashboard.component');
-var hero_detail_component_1 = require('./hero-detail.component');
-var heroes_component_1 = require('./heroes.component');
-var hero_search_component_1 = require('./hero-search.component');
-var hero_service_1 = require('./hero.service');
-require('../rxjs-extensions');
+var dashboard_component_1 = require('./dashboard/dashboard.component');
+var hero_detail_component_1 = require('./users/hero-detail.component');
+var heroes_component_1 = require('./users/heroes.component');
+var hero_search_component_1 = require('./users/hero-search.component');
+var hero_service_1 = require('./users/hero.service');
+require('./rxjs-extensions');
 var AppModule = (function () {
     function AppModule() {
     }

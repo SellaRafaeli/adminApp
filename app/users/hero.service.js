@@ -40,16 +40,19 @@ var HeroService = (function () {
             .catch(this.handleError);
     };
     HeroService.prototype.create = function (name) {
-        debugger;
+        //.post(this.heroesUrl, JSON.stringify({name: name}), {headers: this.headers})
         return this.http
-            .post(this.heroesUrl, JSON.stringify({ name: name }), { headers: this.headers })
+            .get('/api/users/addOne?name=' + name, { headers: this.headers })
             .toPromise()
-            .then(function (res) { return res.json().data; })
+            .then(function (res) { return res.json(); })
             .catch(this.handleError);
     };
-    HeroService.prototype.delete = function (id) {
-        var url = this.heroesUrl + "/" + id;
-        return this.http.delete(url, { headers: this.headers })
+    HeroService.prototype.delete = function (_id) {
+        //this.http.delete(url, {headers: this.headers})
+        //const url = `${this.heroesUrl}/${id}`;
+        debugger;
+        var url = '/api/users/delete/' + _id;
+        return this.http.get(url, { headers: this.headers })
             .toPromise()
             .then(function () { return null; })
             .catch(this.handleError);

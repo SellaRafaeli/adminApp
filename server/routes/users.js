@@ -1,3 +1,8 @@
+
+app.get('/api/users/seedData', (req, res) => {
+  Users.deleteMany().then(() => 123);
+});
+
 app.get('/api/users/all', (req,res) => {
   //res.send({data: [{id: 123, name: 'moo'}]})
   Users.find().toArray().then((users) => res.send({data: users}));
@@ -13,6 +18,11 @@ app.get('/api/users/addOne', (req,res) => {
 
 app.get('/api/users/deleteAll', (req,res) => {
   Users.deleteMany().then(sendOK(res));
+});
+
+app.get('/api/users/delete/:_id', (req,res) => {
+  log(req.params._id)
+  Users.deleteOne({_id: req.params._id}).then(sendOK(res));
 });
 
 app.get('/api/users/updateOne', (req, res) => {

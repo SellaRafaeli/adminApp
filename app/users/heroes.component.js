@@ -21,7 +21,7 @@ var HeroesComponent = (function () {
         this.heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
         console.log('getting heroes');
         var hrc = this;
-        window.bla = hrc;
+        //    window.bla = hrc;
         this.heroService.getHeroes().then(function (heroes) {
             console.log(heroes);
             return (hrc.heroes = heroes);
@@ -48,16 +48,16 @@ var HeroesComponent = (function () {
     HeroesComponent.prototype.delete = function (hero) {
         var _this = this;
         this.heroService
-            .delete(hero.id)
+            .delete(hero._id)
             .then(function () {
-            _this.heroes = _this.heroes.filter(function (h) { return h !== hero; });
+            _this.heroes = _this.heroes.filter(function (h) { return h._id !== hero._id; });
             if (_this.selectedHero === hero) {
                 _this.selectedHero = null;
             }
         });
     };
     HeroesComponent.prototype.gotoDetail = function () {
-        this.router.navigate(['/detail', this.selectedHero.id]);
+        this.router.navigate(['/users', this.selectedHero._id]);
     };
     HeroesComponent = __decorate([
         core_1.Component({
