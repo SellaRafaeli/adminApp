@@ -22,7 +22,7 @@ var hero_detail_component_1 = require('./hero-detail.component');
 var heroes_component_1 = require('./heroes.component');
 var hero_search_component_1 = require('./hero-search.component');
 var hero_service_1 = require('./hero.service');
-require('./rxjs-extensions');
+require('../rxjs-extensions');
 var AppModule = (function () {
     function AppModule() {
     }

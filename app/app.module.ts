@@ -16,7 +16,7 @@ import { HeroesComponent }      from './heroes.component';
 import { HeroSearchComponent } from './hero-search.component';
 import { HeroService }          from './hero.service';
 
-import './rxjs-extensions';
+import '../rxjs-extensions';
 
 @NgModule({
   imports: [
