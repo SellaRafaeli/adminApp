@@ -24,15 +24,20 @@ export class HeroService {
                .catch(this.handleError);
   }
 
-  getHero(id: number): Promise<Hero> {
-    return this.getHeroes()
-             .then(heroes => heroes.find(hero => hero.id === id));
+  getHero(_id: string): Promise<Hero> {
+    return this.http.get('/api/users/id/'+_id)
+               .toPromise()               
+               .then(function(response){
+                 return response.json() as Hero
+               }) 
+               .catch(this.handleError);
   }
 
   update(hero: Hero): Promise<Hero> {
-    const url = `${this.heroesUrl}/${hero.id}`;
+    //.put(url, JSON.stringify(hero), {headers: this.headers})
+    let url = `/api/users/updateOne?_id=${hero._id}&name=${hero.name}`;
     return this.http
-      .put(url, JSON.stringify(hero), {headers: this.headers})
+      .get(url,{headers: this.headers})
       .toPromise()
       .then(() => hero)
       .catch(this.handleError);

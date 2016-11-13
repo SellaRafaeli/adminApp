@@ -1,7 +1,7 @@
 var express = require('express');
 var router  = express.Router();
 
-var clientSideRoutes = ['/','/dashboard','/users','/heroes']
+var clientSideRoutes = ['/','/dashboard','/users','/heroes','/users/:id']
 
 
 router.get(clientSideRoutes, (req, res, next) => {

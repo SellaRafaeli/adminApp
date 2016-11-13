@@ -1,6 +1,5 @@
-
-app.get('/api/users/seedData', (req, res) => {
-  Users.deleteMany().then(() => 123);
+app.get('/api/users/addOne', (req,res) => {
+  Users.add(req.query).then(sendThis(res));
 });
 
 app.get('/api/users/all', (req,res) => {
@@ -12,9 +11,9 @@ app.get('/api/users/', (req,res) => {
   res.redirect('/api/users/all');
 })
 
-app.get('/api/users/addOne', (req,res) => {
-  Users.add(req.query).then(sendThis(res));
-});
+app.get('/api/users/id/:_id', (req,res) => {
+  Users.findOne({_id: req.params._id}).then(sendThis(res));
+})
 
 app.get('/api/users/deleteAll', (req,res) => {
   Users.deleteMany().then(sendOK(res));

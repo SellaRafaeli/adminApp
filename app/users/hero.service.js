@@ -27,14 +27,19 @@ var HeroService = (function () {
         })
             .catch(this.handleError);
     };
-    HeroService.prototype.getHero = function (id) {
-        return this.getHeroes()
-            .then(function (heroes) { return heroes.find(function (hero) { return hero.id === id; }); });
+    HeroService.prototype.getHero = function (_id) {
+        return this.http.get('/api/users/id/' + _id)
+            .toPromise()
+            .then(function (response) {
+            return response.json();
+        })
+            .catch(this.handleError);
     };
     HeroService.prototype.update = function (hero) {
-        var url = this.heroesUrl + "/" + hero.id;
+        //.put(url, JSON.stringify(hero), {headers: this.headers})
+        var url = "/api/users/updateOne?_id=" + hero._id + "&name=" + hero.name;
         return this.http
-            .put(url, JSON.stringify(hero), { headers: this.headers })
+            .get(url, { headers: this.headers })
             .toPromise()
             .then(function () { return hero; })
             .catch(this.handleError);
