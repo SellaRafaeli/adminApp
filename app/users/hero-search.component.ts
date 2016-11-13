@@ -44,7 +44,7 @@ export class HeroSearchComponent implements OnInit {
       });
   }
   gotoDetail(hero: Hero): void {
-    let link = ['/user', hero._id];
+    let link = ['/users', hero._id];
     this.router.navigate(link);
   }
 }

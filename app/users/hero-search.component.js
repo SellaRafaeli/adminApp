@@ -38,7 +38,7 @@ var HeroSearchComponent = (function () {
         });
     };
     HeroSearchComponent.prototype.gotoDetail = function (hero) {
-        var link = ['/user', hero._id];
+        var link = ['/users', hero._id];
         this.router.navigate(link);
     };
     HeroSearchComponent = __decorate([
