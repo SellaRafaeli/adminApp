@@ -4,6 +4,7 @@ app                    = express();
 var path               = require('path');
 var routes             = require('./routes/index');
 var users              = require('./routes/users');
+var posts              = require('./routes/posts');
 var mongo              = require('./mongoDB')
 var middlewareIncoming = require('./middlewareIncoming')(app)
 var nodeUtils          = require('./nodeUtils')

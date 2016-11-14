@@ -22,6 +22,7 @@ var hero_detail_component_1 = require('./users/hero-detail.component');
 var heroes_component_1 = require('./users/heroes.component');
 var hero_search_component_1 = require('./users/hero-search.component');
 var hero_service_1 = require('./users/hero.service');
+var posts_list_component_1 = require('./posts/posts-list.component');
 require('./rxjs-extensions');
 var AppModule = (function () {
     function AppModule() {
@@ -40,7 +41,8 @@ var AppModule = (function () {
                 dashboard_component_1.DashboardComponent,
                 hero_detail_component_1.HeroDetailComponent,
                 heroes_component_1.HeroesComponent,
-                hero_search_component_1.HeroSearchComponent
+                hero_search_component_1.HeroSearchComponent,
+                posts_list_component_1.PostsListComponent
             ],
             providers: [hero_service_1.HeroService],
             bootstrap: [app_component_1.AppComponent]

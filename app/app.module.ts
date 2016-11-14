@@ -16,6 +16,8 @@ import { HeroesComponent }      from './users/heroes.component';
 import { HeroSearchComponent }  from './users/hero-search.component';
 import { HeroService }          from './users/hero.service';
 
+import { PostsListComponent }      from './posts/posts-list.component';
+
 import './rxjs-extensions';
 
 @NgModule({
@@ -31,7 +33,8 @@ import './rxjs-extensions';
     DashboardComponent,
     HeroDetailComponent,
     HeroesComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    PostsListComponent
   ],
   providers: [ HeroService ],
   bootstrap: [ AppComponent ]

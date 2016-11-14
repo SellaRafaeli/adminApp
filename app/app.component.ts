@@ -13,6 +13,7 @@ import { HeroService } from './users/hero.service';
     <nav>
       <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
       <a routerLink="/heroes"    routerLinkActive="active">Heroes</a>
+      <a routerLink="/posts"     routerLinkActive="active">Posts</a>
     </nav>
     <router-outlet></router-outlet>
   `,
@@ -20,5 +21,5 @@ import { HeroService } from './users/hero.service';
 })
 
 export class AppComponent {
-  title = 'My App1001'
+  title = 'My App1003'
 }
